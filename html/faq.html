@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Robótica e IoT - FAQ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white" href="index.html">
+                <i class="fas fa-robot me-2"></i>
+                Robótica & IoT
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i> Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="videos.html">
+                            <i class="fas fa-video me-1"></i> Vídeos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="graficos.html">
+                            <i class="fas fa-chart-line me-1"></i> Gráficos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="noticias.html">
+                            <i class="fas fa-newspaper me-1"></i> Notícias
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ranking.html">
+                            <i class="fas fa-trophy me-1"></i> Ranking
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contatos.html">
+                            <i class="fas fa-address-book me-1"></i> Contatos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="faq.html">
+                            <i class="fas fa-question-circle me-1"></i> FAQ
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <!-- Theme Toggle Button -->
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container" style="margin-top: 76px;">
+        <!-- FAQ PAGE -->
+        <div class="container">
+            <h1 class="mb-5 text-center"><i class="fas fa-question-circle me-3"></i> FAQ</h1>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion accordion-custom" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    O que é IoT?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Internet of Things (IoT) ou Internet das Coisas é o conceito de conectar qualquer dispositivo à internet e outros dispositivos conectados. IoT é uma rede gigante de coisas conectadas - todas coletando e compartilhando dados sobre como são usadas e o ambiente ao seu redor.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Quais sensores são utilizados no projeto?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Utilizamos diversos sensores como: sensor de temperatura DHT22, sensor de umidade, sensor ultrassônico HC-SR04 para medição de distância, sensor de velocidade, módulo GPS, sensor de luminosidade LDR, sensor de movimento PIR, e sensores de pressão.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Como funciona a coleta de dados?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Os sensores coletam dados em tempo real e os enviam via WiFi para nosso sistema. Os dados são processados e armazenados em banco de dados, depois exibidos em gráficos interativos neste portal para análise e visualização.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Que linguagens de programação são usadas?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Utilizamos principalmente C++ para Arduino, Python para processamento de dados, JavaScript para interface web, HTML/CSS para frontend, e SQL para banco de dados. Cada linguagem tem seu papel específico no sistema.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Como posso participar dos projetos?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Entre em contato através da página de contatos! Estamos sempre buscando novos membros interessados em robótica e IoT. Não é necessário experiência prévia, apenas vontade de aprender e colaborar.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    Onde posso aprender mais sobre robótica?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Recomendamos começar com Arduino, cursos online gratuitos, documentação oficial, e participar de comunidades como fóruns e grupos de estudo. Nossa seção de vídeos também oferece tutoriais práticos.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Perguntas da Comunidade -->
+                    <div class="mt-5">
+                        <h3 class="mb-4 text-center">Perguntas da Comunidade</h3>
+                        <div id="questionsList">
+                            <p style="color: var(--text-muted-color)" class="text-center">Nenhuma pergunta da comunidade ainda. Seja o primeiro a perguntar!</p>
+                        </div>
+                        
+                        <!-- Formulário para Nova Pergunta -->
+                        <div class="card-custom mt-4">
+                            <div class="card-header-custom">
+                                <h5 class="mb-0"><i class="fas fa-plus me-2"></i> Fazer uma Pergunta</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="questionForm">
+                                    <div class="mb-3">
+                                        <label for="questionTitle" class="form-label">Título da Pergunta</label>
+                                        <input type="text" class="form-control" id="questionTitle" placeholder="Digite o título da sua pergunta" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="questionContent" class="form-label">Detalhes</label>
+                                        <textarea class="form-control" id="questionContent" rows="4" placeholder="Descreva sua pergunta em detalhes..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary-custom">
+                                        <i class="fas fa-paper-plane me-2"></i> Enviar Pergunta
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="floating-action">
+        <button class="floating-btn" onclick="scrollToTop()" title="Voltar ao topo">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-custom py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-robot me-2"></i> Portal Robótica & IoT</h5>
+                    <p class="text-muted">Explorando o futuro da tecnologia através da robótica e Internet das Coisas.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h6>Siga-nos</h6>
+                    <a href="#" class="me-3"><i class="fab fa-instagram fs-4"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-github fs-4"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-linkedin fs-4"></i></a>
+                    <a href="#" class=""><i class="fab fa-youtube fs-4"></i></a>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Portal Robótica & IoT. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/script.js"></script>
+</body>
+</html>
