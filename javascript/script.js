@@ -83,25 +83,25 @@ function updateQuestionsList() {
 }
 
 // ===== CONFIGURAÇÃO DOS GRÁFICOS =====
-// Retorna as cores baseadas no tema atual
+// Cores
 function getChartColors() {
     const isLight = document.body.classList.contains('light-theme');
     return {
-        textColor: isLight ? '#212529' : '#ffffff',
-        gridColor: isLight ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)',
-        legendColor: isLight ? '#212529' : '#ffffff',
+        textColor: isLight ? '#2d3748' : '#e2e8f0',
+        gridColor: isLight ? 'rgba(44, 82, 130, 0.1)' : 'rgba(255, 255, 255, 0.1)',
+        legendColor: isLight ? '#2d3748' : '#e2e8f0',
         datasets: {
             temperature: {
-                bg: 'rgba(186, 45, 151, 0.8)',
-                border: '#ba2d97'
+                bg: 'rgba(44, 82, 130, 0.7)',
+                border: '#2c5282'
             },
             humidity: {
-                bg: 'rgba(0, 212, 255, 0.8)',
-                border: '#00d4ff'
+                bg: 'rgba(66, 153, 225, 0.7)',
+                border: '#4299e1'
             },
             speed: {
-                bg: 'rgba(138, 5, 190, 0.8)',
-                border: '#8a05be'
+                bg: 'rgba(99, 179, 237, 0.7)',
+                border: '#63b3ed'
             }
         }
     };

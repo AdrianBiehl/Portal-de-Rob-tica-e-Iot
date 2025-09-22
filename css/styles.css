@@ -1,20 +1,20 @@
 /* ===== VARIÁVEIS DO TEMA ===== */
 :root {
-    --primary-color: #8a05be;
-    --secondary-color: #ba2d97;
-    --accent: #00d4ff;
-    --dark-bg: #1a1a1a;
-    --dark-surface: #2d2d2d;
-    --dark-card: #3a3a3a;
-    --dark-text: #ffffff;
-    --dark-text-muted: #b3b3b3;
+    --primary-color: #2c5282;    /* Calming dark blue */
+    --secondary-color: #4299e1;  /* Soft blue */
+    --accent: #63b3ed;          /* Light blue */
+    --dark-bg: #1a202c;
+    --dark-surface: #2d3748;
+    --dark-card: #2d3748;
+    --dark-text: #e2e8f0;
+    --dark-text-muted: #a0aec0;
     --dark-border: rgba(255, 255, 255, 0.1);
-    --light-bg: #f8f9fa;
+    --light-bg: #f7fafc;
     --light-surface: #ffffff;
     --light-card: #ffffff;
-    --light-text: #212529;
-    --light-text-muted: #6c757d;
-    --light-border: rgba(0, 0, 0, 0.125);
+    --light-text: #2d3748;
+    --light-text-muted: #718096;
+    --light-border: rgba(0, 0, 0, 0.1);
 }
 
 /* ===== CONFIGURAÇÃO DO TEMA ===== */
@@ -135,7 +135,7 @@ body {
 
 .card-custom:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(138, 5, 190, 0.3);
+    box-shadow: 0 15px 30px rgba(44, 82, 130, 0.15);
 }
 
 .card-header-custom {
@@ -163,7 +163,7 @@ body {
 
 .contact-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(186, 45, 151, 0.3);
+    box-shadow: 0 20px 40px rgba(44, 82, 130, 0.15);
 }
 
 .contact-photo {
@@ -224,7 +224,7 @@ body {
     background-color: var(--surface-color);
     border-color: var(--primary-color);
     color: var(--text-color);
-    box-shadow: 0 0 0 0.2rem rgba(138, 5, 190, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 71, 171, 0.25);
 }
 
 .form-control::placeholder {
@@ -291,7 +291,7 @@ body {
 
 /* ===== SEÇÃO HERO ===== */
 .hero-section {
-    background: linear-gradient(135deg, rgba(138, 5, 190, 0.8), rgba(186, 45, 151, 0.8));
+    background: linear-gradient(135deg, rgba(44, 82, 130, 0.9), rgba(66, 153, 225, 0.9));
     padding: 4rem 0;
     text-align: center;
     border-radius: 20px;
@@ -346,13 +346,12 @@ body {
     border: none;
     color: white;
     font-size: 1.5rem;
-    box-shadow: 0 10px 25px rgba(138, 5, 190, 0.4);
+    box-shadow: 0 10px 25px rgba(44, 82, 130, 0.2);
     transition: all 0.3s ease;
 }
 
 .floating-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 15px 35px rgba(138, 5, 190, 0.6);
+    box-shadow: 0 15px 35px rgba(44, 82, 130, 0.3);
     color: white;
 }
 
