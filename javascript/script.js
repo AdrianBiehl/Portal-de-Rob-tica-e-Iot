@@ -260,7 +260,7 @@ function initCharts() {
     }
 }
 
-// ===== UTILIDADES =====
+//  UTILIDADES 
 // Função para rolar suavemente ao topo da página
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -285,7 +285,7 @@ function showNotification(message, type) {
     }, 5000);
 }
 
-// ===== INICIALIZAÇÃO DA PÁGINA =====
+//  INICIALIZAÇÃO DA PÁGINA 
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializa tema e componentes
     initializeTheme();
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     }
     
-    // ===== FORMULÁRIOS =====
+    // FORMULÁRIOS 
     // Formulário de Contato
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Configura rolagem suave para links internos
+    // Configura rolagem 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();

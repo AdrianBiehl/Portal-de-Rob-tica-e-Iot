@@ -67,14 +67,12 @@
             </div>
         </div>
     </nav>
-
     <div class="main-container">
         <div class="container">
             <h1 class="text-center mb-5">
                 <i class="fas fa-chart-line me-3"></i> Dados dos Sensores
             </h1>
             <div class="row g-4">
-                <!-- Cards dos gráficos com espaçamento uniforme -->
                 <div class="col-md-6 mb-4">
                     <div class="card-custom">
                         <div class="card-header-custom">
@@ -150,13 +148,11 @@
             </div>
         </div>
     </div>
-
     <div class="floating-action">
         <button class="floating-btn" onclick="scrollToTop()" title="Voltar ao topo">
             <i class="fas fa-arrow-up"></i>
         </button>
     </div>
-
     <footer class="footer-custom py-4 mt-5">
         <div class="container">
             <div class="row">
@@ -178,17 +174,8 @@
             </div>
         </div>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../javascript/script.js"></script>
-    <script>
-        window.addEventListener('load', function() {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            document.body.classList.toggle('light-theme', savedTheme === 'light');
-            initializeTheme();
-            setTimeout(initCharts, 100);
-        });
-    </script>
 </body>
 </html>

@@ -1,8 +1,8 @@
-/* ===== VARIÁVEIS DO TEMA ===== */
+/* VARIÁVEIS DO TEMA */
 :root {
-    --primary-color: #2c5282;    /* Calming dark blue */
-    --secondary-color: #4299e1;  /* Soft blue */
-    --accent: #63b3ed;          /* Light blue */
+    --primary-color: #2c5282;    
+    --secondary-color: #4299e1;  
+    --accent: #63b3ed;          
     --dark-bg: #1a202c;
     --dark-surface: #2d3748;
     --dark-card: #2d3748;
@@ -17,7 +17,7 @@
     --light-border: rgba(0, 0, 0, 0.1);
 }
 
-/* ===== CONFIGURAÇÃO DO TEMA ===== */
+/* TEMA */
 body {
     --bg-color: var(--dark-bg);
     --surface-color: var(--dark-surface);
@@ -36,7 +36,7 @@ body.light-theme {
     --border-color: var(--light-border);
 }
 
-/* ===== ESTILOS GLOBAIS ===== */
+/* ESTILOS */
 * {
     margin: 0;
     padding: 0;
@@ -51,7 +51,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ===== NAVEGAÇÃO ===== */
+/* NAVEGAÇÃO */
 .navbar-custom {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     backdrop-filter: blur(10px);
@@ -80,7 +80,7 @@ body {
     font-weight: 600;
 }
 
-/* ===== BOTÕES E CONTROLES ===== */
+/* BOTÕES */
 .btn-login {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -115,7 +115,7 @@ body {
     transform: scale(1.1);
 }
 
-/* ===== CARDS E CONTAINERS ===== */
+/* CARDS E CONTAINERS */
 .main-container {
     padding: 4rem 0;
     max-width: 1400px;
@@ -210,7 +210,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* ===== FORMULÁRIOS ===== */
+/* FORMULÁRIOS */
 .form-control {
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
@@ -245,7 +245,7 @@ body {
     font-weight: 500;
 }
 
-/* ===== ACORDEÃO FAQ ===== */
+/* FAQ */
 .accordion-custom .accordion-item {
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
@@ -289,7 +289,7 @@ body {
     filter: brightness(0) invert(1);
 }
 
-/* ===== SEÇÃO HERO ===== */
+/*  SEÇÃO HERO */
 .hero-section {
     background: linear-gradient(135deg, rgba(44, 82, 130, 0.9), rgba(66, 153, 225, 0.9));
     padding: 4rem 0;
@@ -311,7 +311,7 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* ===== ESTATÍSTICAS ===== */
+/* ESTATÍSTICAS */
 .stats-card {
     background: var(--surface-color);
     padding: 2rem;
@@ -330,7 +330,7 @@ body {
     background-clip: text;
 }
 
-/* ===== BOTÃO FLUTUANTE ===== */
+/* BOTÃO FLUTUANTE */
 .floating-action {
     position: fixed;
     bottom: 30px;
@@ -355,10 +355,13 @@ body {
     color: white;
 }
 
-/* ===== TABELAS ===== */
+/* TABELAS */
 .table-dark {
     --bs-table-bg: var(--surface-color);
     --bs-table-color: var(--text-color);
+    --bs-table-striped-color: var(--text-color);
+    --bs-table-hover-color: var(--text-color);
+    color: var(--text-color) !important;
 }
 
 .light-theme .table-dark {
@@ -366,6 +369,7 @@ body {
     --bs-table-color: var(--text-color);
     --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
     --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    color: var(--text-color) !important;
 }
 
 .table {
@@ -382,7 +386,7 @@ body {
     vertical-align: middle;
 }
 
-/* ===== RODAPÉ ===== */
+/* RODAPÉ */
 .footer-custom {
     background-color: var(--surface-color);
     border-top: 1px solid var(--border-color);
@@ -402,7 +406,7 @@ body {
     color: var(--accent);
 }
 
-/* ===== COMPONENTES DE MÍDIA ===== */
+/* COMPONENTES DE MÍDIA */
 .news-image {
     width: 100%;
     height: 220px;
@@ -411,7 +415,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* ===== ALERTAS ===== */
+/* ALERTAS */
 .alert-success {
     background-color: rgba(25, 135, 84, 0.2);
     border-color: rgba(25, 135, 84, 0.3);
@@ -438,7 +442,7 @@ body {
     color: #000 !important;
 }
 
-/* ===== RANKING ===== */
+/* RANKING */
 .ranking-card {
     background: var(--surface-color);
     border-radius: 15px;
@@ -481,21 +485,18 @@ body {
     margin-bottom: 1rem;
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* ESPONSIVIDADE  */
 @media (max-width: 768px) {
     .main-container {
         padding: 2rem 1rem;
     }
-
     h1 {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
-
     .card-custom {
         margin-bottom: 1.5rem;
     }
-
     .news-image {
         height: 180px;
     }
