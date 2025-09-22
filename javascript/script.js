@@ -1,76 +1,62 @@
-// Theme management
-let currentTheme = 'dark'; // default theme
+// ===== GERENCIAMENTO DE TEMA =====
+let currentTheme = localStorage.getItem('theme') || 'dark';
 
+// Inicializa o tema com base no localStorage
 function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    currentTheme = savedTheme;
-    applyTheme(savedTheme);
+    currentTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(currentTheme);
 }
 
+// Alterna entre tema claro e escuro
 function toggleTheme() {
     currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(currentTheme);
     localStorage.setItem('theme', currentTheme);
+    applyTheme(currentTheme);
     
-    // Reinitialize charts with new theme colors if on charts page
     if (document.getElementById('tempChart')) {
         setTimeout(() => {
-            // Clear existing charts
-            Chart.getChart("tempChart")?.destroy();
-            Chart.getChart("humidityChart")?.destroy();
-            Chart.getChart("speedChart")?.destroy();
+            const tempChart = Chart.getChart("tempChart");
+            const humidityChart = Chart.getChart("humidityChart");
+            const speedChart = Chart.getChart("speedChart");
+            
+            if (tempChart) tempChart.destroy();
+            if (humidityChart) humidityChart.destroy();
+            if (speedChart) speedChart.destroy();
+            
             initCharts();
         }, 100);
     }
 }
 
+// Aplica o tema selecionado ao documento
 function applyTheme(theme) {
     const body = document.body;
     const themeIcon = document.getElementById('theme-icon');
     
     if (theme === 'light') {
         body.classList.add('light-theme');
-        themeIcon.className = 'fas fa-sun';
-        themeIcon.title = 'Tema claro ativo - Clique para escuro';
+        if (themeIcon) {
+            themeIcon.className = 'fas fa-sun';
+            themeIcon.title = 'Tema claro ativo - Clique para escuro';
+        }
     } else {
         body.classList.remove('light-theme');
-        themeIcon.className = 'fas fa-moon';
-        themeIcon.title = 'Tema escuro ativo - Clique para claro';
+        if (themeIcon) {
+            themeIcon.className = 'fas fa-moon';
+            themeIcon.title = 'Tema escuro ativo - Clique para claro';
+        }
     }
 }
 
-// In-memory storage for user data and questions
+// ===== GERENCIAMENTO DE DADOS =====
 let contactMessages = [];
 let questions = [];
 
-// Save data to localStorage
-function saveData() {
-    try {
-        localStorage.setItem('portalQuestions', JSON.stringify(questions));
-        localStorage.setItem('portalMessages', JSON.stringify(contactMessages));
-    } catch (e) {
-        console.log('Error saving data');
-    }
-}
-
-// Load saved data from localStorage
-function loadData() {
-    try {
-        const savedQuestions = localStorage.getItem('portalQuestions');
-        const savedMessages = localStorage.getItem('portalMessages');
-        
-        if (savedQuestions) questions = JSON.parse(savedQuestions);
-        if (savedMessages) contactMessages = JSON.parse(savedMessages);
-    } catch (e) {
-        console.log('No saved data found or error loading data');
-    }
-}
-
-// Update questions list
+// Atualiza a lista de perguntas na página FAQ
 function updateQuestionsList() {
     const questionsList = document.getElementById('questionsList');
     
-    if (!questionsList) return; // Only run on FAQ page
+    if (!questionsList) return;
     
     if (questions.length === 0) {
         questionsList.innerHTML = '<p style="color: var(--text-muted-color)" class="text-center">Nenhuma pergunta da comunidade ainda. Seja o primeiro a perguntar!</p>';
@@ -82,46 +68,65 @@ function updateQuestionsList() {
         const date = new Date(question.createdAt).toLocaleDateString('pt-BR');
         html += `
             <div class="card-custom mb-3">
-                    <div class="card-body">
-                        <h6 class="card-title"><i class="fas fa-question-circle me-2"></i>${question.title}</h6>
-                        <p class="card-text">${question.content}</p>
-                        <small style="color: var(--text-muted-color)">
-                            Por ${question.author} em ${date}
-                        </small>
-                    </div>
+                <div class="card-body">
+                    <h6 class="card-title"><i class="fas fa-question-circle me-2"></i>${question.title}</h6>
+                    <p class="card-text">${question.content}</p>
+                    <small style="color: var(--text-muted-color)">
+                        Por ${question.author} em ${date}
+                    </small>
                 </div>
-            `;
+            </div>
+        `;
     });
     
     questionsList.innerHTML = html;
 }
 
-// Charts initialization with theme support
+// ===== CONFIGURAÇÃO DOS GRÁFICOS =====
+// Retorna as cores baseadas no tema atual
 function getChartColors() {
     const isLight = document.body.classList.contains('light-theme');
     return {
         textColor: isLight ? '#212529' : '#ffffff',
-        gridColor: isLight ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)'
+        gridColor: isLight ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)',
+        legendColor: isLight ? '#212529' : '#ffffff',
+        datasets: {
+            temperature: {
+                bg: 'rgba(186, 45, 151, 0.8)',
+                border: '#ba2d97'
+            },
+            humidity: {
+                bg: 'rgba(0, 212, 255, 0.8)',
+                border: '#00d4ff'
+            },
+            speed: {
+                bg: 'rgba(138, 5, 190, 0.8)',
+                border: '#8a05be'
+            }
+        }
     };
 }
 
+// Inicializa todos os gráficos da página
 function initCharts() {
+    if (typeof Chart === 'undefined') return;
+
     const colors = getChartColors();
     
-    // Temperature Chart
+    // Gráfico de Temperatura
     const tempCtx = document.getElementById('tempChart');
     if (tempCtx) {
         new Chart(tempCtx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
                 datasets: [{
                     label: 'Temperatura (°C)',
                     data: [22, 20, 25, 28, 30, 26],
-                    borderColor: '#8a05be',
-                    backgroundColor: 'rgba(138, 5, 190, 0.1)',
-                    tension: 0.4,
-                    fill: true
+                    backgroundColor: colors.datasets.temperature.bg,
+                    borderColor: colors.datasets.temperature.border,
+                    borderWidth: 1,
+                    color: colors.textColor
                 }]
             },
             options: {
@@ -131,31 +136,28 @@ function initCharts() {
                         labels: {
                             color: colors.textColor
                         }
+                    },
+                    tooltip: {
+                        titleColor: colors.textColor,
+                        bodyColor: colors.textColor,
+                        backgroundColor: colors.datasets.temperature.bg
                     }
                 },
                 scales: {
                     y: {
-                        ticks: {
-                            color: colors.textColor
-                        },
-                        grid: {
-                            color: colors.gridColor
-                        }
+                        ticks: { color: colors.textColor },
+                        grid: { color: colors.gridColor }
                     },
                     x: {
-                        ticks: {
-                            color: colors.textColor
-                        },
-                        grid: {
-                            color: colors.gridColor
-                        }
+                        ticks: { color: colors.textColor },
+                        grid: { color: colors.gridColor }
                     }
                 }
             }
         });
     }
     
-    // Humidity Chart
+    // Gráfico de Umidade
     const humidityCtx = document.getElementById('humidityChart');
     if (humidityCtx) {
         new Chart(humidityCtx, {
@@ -175,8 +177,12 @@ function initCharts() {
                 plugins: {
                     legend: {
                         labels: {
-                            color: colors.textColor
+                            color: colors.legendColor
                         }
+                    },
+                    tooltip: {
+                        titleColor: colors.textColor,
+                        bodyColor: colors.textColor
                     }
                 },
                 scales: {
@@ -201,21 +207,20 @@ function initCharts() {
         });
     }
     
-    // Speed Chart
+    // Gráfico de Velocidade
     const speedCtx = document.getElementById('speedChart');
     if (speedCtx) {
         new Chart(speedCtx, {
-            type: 'doughnut',
+            type: 'bar',
             data: {
-                labels: ['Baixa', 'Média', 'Alta'],
+                labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
                 datasets: [{
-                    data: [30, 45, 25],
-                    backgroundColor: [
-                        '#ba2d97',
-                        '#8a05be',
-                        '#00d4ff'
-                    ],
-                    borderWidth: 0
+                    label: 'Velocidade (km/h)',
+                    data: [30, 45, 25, 35, 40, 15],
+                    backgroundColor: colors.datasets.speed.bg,
+                    borderColor: colors.datasets.speed.border,
+                    borderWidth: 1,
+                    color: colors.textColor
                 }]
             },
             options: {
@@ -225,6 +230,29 @@ function initCharts() {
                         labels: {
                             color: colors.textColor
                         }
+                    },
+                    tooltip: {
+                        titleColor: colors.textColor,
+                        bodyColor: colors.textColor,
+                        backgroundColor: colors.datasets.speed.bg
+                    }
+                },
+                scales: {
+                    y: {
+                        ticks: {
+                            color: colors.textColor
+                        },
+                        grid: {
+                            color: colors.gridColor
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: colors.textColor
+                        },
+                        grid: {
+                            color: colors.gridColor
+                        }
                     }
                 }
             }
@@ -232,13 +260,14 @@ function initCharts() {
     }
 }
 
-// Utility functions
+// ===== UTILIDADES =====
+// Função para rolar suavemente ao topo da página
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Exibe notificações temporárias
 function showNotification(message, type) {
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show position-fixed`;
     notification.style.cssText = 'top: 100px; right: 20px; z-index: 9999; min-width: 300px;';
@@ -249,7 +278,6 @@ function showNotification(message, type) {
     
     document.body.appendChild(notification);
     
-    // Auto remove after 5 seconds
     setTimeout(() => {
         if (notification.parentNode) {
             notification.remove();
@@ -257,13 +285,21 @@ function showNotification(message, type) {
     }, 5000);
 }
 
-// Initialize page
+// ===== INICIALIZAÇÃO DA PÁGINA =====
 document.addEventListener('DOMContentLoaded', function() {
-    initializeTheme(); // Initialize theme first
-    loadData();
+    // Inicializa tema e componentes
+    initializeTheme();
     updateQuestionsList();
     
-    // Contact form
+    // Inicializa gráficos se estiver na página correta
+    if (document.getElementById('tempChart')) {
+        setTimeout(() => {
+            initCharts();
+        }, 500);
+    }
+    
+    // ===== FORMULÁRIOS =====
+    // Formulário de Contato
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -282,15 +318,13 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             contactMessages.push(newMessage);
-            saveData();
             
-            // Reset form
             contactForm.reset();
             showNotification('Mensagem enviada com sucesso!', 'success');
         });
     }
     
-    // Question form
+    // Formulário de Perguntas
     const questionForm = document.getElementById('questionForm');
     if (questionForm) {
         questionForm.addEventListener('submit', function(e) {
@@ -308,16 +342,14 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             questions.push(newQuestion);
-            saveData();
             
-            // Reset form
             questionForm.reset();
             updateQuestionsList();
             showNotification('Pergunta enviada com sucesso!', 'success');
         });
     }
     
-    // Add smooth scrolling to all anchor links
+    // Configura rolagem suave para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();

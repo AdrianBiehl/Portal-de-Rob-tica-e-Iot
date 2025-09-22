@@ -9,176 +9,19 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navbar início -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container">
             <a class="navbar-brand text-white" href="index.html">
                 <i class="fas fa-robot me-2"></i>
                 Robótica & IoT
             </a>
-            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <i class="fas fa-bars text-white"></i>
             </button>
-            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="contatos.html">
-                            <i class="fas fa-address-book me-1"></i> Contatos
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faq.html">
-                            <i class="fas fa-question-circle me-1"></i> FAQ
-                        </a>
-                    </li>
-                </ul>
-                
-                <div class="d-flex align-items-center">
-                    <!-- Theme Toggle Button -->
-                    <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
-                        <i class="fas fa-moon" id="theme-icon"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="main-container" style="margin-top: 76px;">
-        <!-- NEWS PAGE -->
-        <div class="container">
-            <h1 class="mb-5 text-center"><i class="fas fa-newspaper me-3"></i> Notícias IoT</h1>
-
-            <div class="row">
-                <!-- Notícia 1 -->
-                <div class="col-lg-6 mb-4">
-                    <article class="card-custom h-100">
-                        <div class="card-body text-start">
-                            <!-- Imagem em cima -->
-                            <img src="https://blog.arduinoomega.com/wp-content/uploads/2019/03/montagem-final-1024x576.jpg" 
-                                 class="news-image shadow mb-3" alt="Imagem Notícia 1">
-
-                            <!-- Texto abaixo -->
-                            <h4><i class="fas fa-microchip me-2"></i> Tecnologia IoT em 2025</h4>
-                            <p style="color: var(--text-muted-color)" class="mb-3">
-                                <i class="fas fa-calendar me-2"></i> 20 de janeiro, 2025
-                            </p>
-                            <p>A tecnologia IoT vem ganhando cada vez mais força e destaque em meio às tecnologias do mercado. Também chamada de Internet das Coisas, ela é responsável por conectar à internet qualquer "coisa" ou objeto sem fio.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="https://blog.algar.com.br/iot-avancos/" target="_blank" class="btn btn-primary-custom">
-                                    Leia Mais
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Notícia 2 -->
-                <div class="col-lg-6 mb-4">
-                    <article class="card-custom h-100">
-                        <div class="card-body text-start">
-                            <!-- Imagem em cima -->
-                            <img src="https://blog.eletrogate.com/wp-content/uploads/2021/12/IM2.png" 
-                                 class="news-image shadow mb-3" alt="Imagem Notícia 2">
-
-                            <!-- Texto abaixo -->
-                            <h4><i class="fas fa-robot me-2"></i> Robótica Educacional</h4>
-                            <p style="color: var(--text-muted-color)" class="mb-3">
-                                <i class="fas fa-calendar me-2"></i> 30 de Setembro, 2022
-                            </p>
-                            <p>Com o desenvolvimento frequente de novas tecnologias, que garantem à sociedade a digitalização de processos produtivos, é natural que a inovação e a solução tecnológica também façam parte da rotina de estudos.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="https://g1.globo.com/ce/ceara/especial-publicitario/fiec-federacao-das-industrias-do-estado-do-ceara/a-industria-em-foco/noticia/2022/09/30/robotica-educacional-desenvolve-habilidades-para-alem-do-aprendizado-teorico-em-sala-de-aula.ghtml" 
-                                   target="_blank" class="btn btn-primary-custom">
-                                    Leia Mais
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Notícia 3 -->
-                <div class="col-lg-6 mb-4">
-                    <article class="card-custom h-100">
-                        <div class="card-body text-start">
-                            <img src="https://via.placeholder.com/400x200/8a05be/ffffff?text=Sensores+IoT" 
-                                 class="news-image shadow mb-3" alt="Sensores IoT">
-
-                            <h4><i class="fas fa-wifi me-2"></i> Futuro dos Sensores</h4>
-                            <p style="color: var(--text-muted-color)" class="mb-3">
-                                <i class="fas fa-calendar me-2"></i> 15 de março, 2025
-                            </p>
-                            <p>Os sensores IoT estão evoluindo rapidamente, permitindo coleta de dados mais precisa e eficiente. Novas tecnologias prometem revolucionar a forma como monitoramos o ambiente.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-primary-custom">
-                                    Leia Mais
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Notícia 4 -->
-                <div class="col-lg-6 mb-4">
-                    <article class="card-custom h-100">
-                        <div class="card-body text-start">
-                            <img src="https://via.placeholder.com/400x200/ba2d97/ffffff?text=Automação" 
-                                 class="news-image shadow mb-3" alt="Automação">
-
-                            <h4><i class="fas fa-cogs me-2"></i> Automação Residencial</h4>
-                            <p style="color: var(--text-muted-color)" class="mb-3">
-                                <i class="fas fa-calendar me-2"></i> 08 de fevereiro, 2025
-                            </p>
-                            <p>A automação residencial usando IoT torna as casas mais inteligentes e eficientes. Controle de temperatura, iluminação e segurança através de dispositivos conectados.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-primary-custom">
-                                    Leia Mais
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating Action Button -->
-    <div class="floating-action">
-        <button class="floating-btn" onclick="scrollToTop()" title="Voltar ao topo">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer-custom py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5><i class="fas fa-robot me-2"></i> Portal Robótica & IoT</h5>
-                    <p class="text-muted">Explorando o futuro da tecnologia através da robótica e Internet das Coisas.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <h6>Siga-nos</h6>
-                    <a href="#" class="me-3"><i class="fab fa-instagram fs-4"></i></a>
-                    <a href="#" class="me-3"><i class="fab fa-github fs-4"></i></a>
-                    <a href="#" class="me-3"><i class="fab fa-linkedin fs-4"></i></a>
-                    <a href="#" class=""><i class="fab fa-youtube fs-4"></i></a>
-                </div>
-            </div>
-            <hr class="my-3">
-            <div class="text-center">
-                <p class="mb-0">&copy; 2025 Portal Robótica & IoT. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="../javascript/script.js"></script>
-</body>
-</html>="nav-item">
                         <a class="nav-link" href="index.html">
                             <i class="fas fa-home me-1"></i> Início
                         </a>
@@ -203,4 +46,148 @@
                             <i class="fas fa-trophy me-1"></i> Ranking
                         </a>
                     </li>
-                    <li class
+                    <li class="nav-item">
+                        <a class="nav-link" href="contatos.html">
+                            <i class="fas fa-address-book me-1"></i> Contatos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">
+                            <i class="fas fa-question-circle me-1"></i> FAQ
+                        </a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar fim -->
+
+    <div class="main-container">
+        <div class="container">
+            <!-- Título da página de notícias -->
+            <h1 class="text-center mb-5">
+                <i class="fas fa-newspaper me-3"></i> Notícias IoT
+            </h1>
+            <div class="row g-4">
+                <!-- Use g-4 para espaçamento consistente entre cards -->
+                <!-- Notícia 1 -->
+                <div class="col-lg-6 mb-4">
+                    <article class="card-custom h-100">
+                        <div class="card-body text-start">
+                            <img src="https://blog.arduinoomega.com/wp-content/uploads/2019/03/montagem-final-1024x576.jpg" 
+                                 class="news-image shadow mb-3" alt="Imagem Notícia 1">
+                            <h4><i class="fas fa-microchip me-2"></i> Tecnologia IoT em 2025</h4>
+                            <p style="color: var(--text-muted-color)" class="mb-3">
+                                <i class="fas fa-calendar me-2"></i> 20 de janeiro, 2025
+                            </p>
+                            <p>A tecnologia IoT vem ganhando cada vez mais força e destaque em meio às tecnologias do mercado. Também chamada de Internet das Coisas, ela é responsável por conectar à internet qualquer "coisa" ou objeto sem fio.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="https://blog.algar.com.br/iot-avancos/" target="_blank" class="btn btn-primary-custom">
+                                    Leia Mais
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- Notícia 2 -->
+                <div class="col-lg-6 mb-4">
+                    <article class="card-custom h-100">
+                        <div class="card-body text-start">
+                            <img src="https://blog.eletrogate.com/wp-content/uploads/2021/12/IM2.png" 
+                                 class="news-image shadow mb-3" alt="Imagem Notícia 2">
+                            <h4><i class="fas fa-robot me-2"></i> Robótica Educacional</h4>
+                            <p style="color: var(--text-muted-color)" class="mb-3">
+                                <i class="fas fa-calendar me-2"></i> 30 de Setembro, 2022
+                            </p>
+                            <p>Com o desenvolvimento frequente de novas tecnologias, que garantem à sociedade a digitalização de processos produtivos, é natural que a inovação e a solução tecnológica também façam parte da rotina de estudos.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="https://g1.globo.com/ce/ceara/especial-publicitario/fiec-federacao-das-industrias-do-estado-do-ceara/a-industria-em-foco/noticia/2022/09/30/robotica-educacional-desenvolve-habilidades-para-alem-do-aprendizado-teorico-em-sala-de-aula.ghtml" 
+                                   target="_blank" class="btn btn-primary-custom">
+                                    Leia Mais
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Use g-4 para espaçamento consistente entre cards -->
+                <!-- Notícia 3 -->
+                <div class="col-lg-6 mb-4">
+                    <article class="card-custom h-100">
+                        <div class="card-body text-start">
+                            <img src="https://via.placeholder.com/400x200/8a05be/ffffff?text=Sensores+IoT" 
+                                 class="news-image shadow mb-3" alt="Sensores IoT">
+                            <h4><i class="fas fa-wifi me-2"></i> Futuro dos Sensores</h4>
+                            <p style="color: var(--text-muted-color)" class="mb-3">
+                                <i class="fas fa-calendar me-2"></i> 15 de março, 2025
+                            </p>
+                            <p>Os sensores IoT estão evoluindo rapidamente, permitindo coleta de dados mais precisa e eficiente. Novas tecnologias prometem revolucionar a forma como monitoramos o ambiente.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="btn btn-primary-custom">
+                                    Leia Mais
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- Notícia 4 -->
+                <div class="col-lg-6 mb-4">
+                    <article class="card-custom h-100">
+                        <div class="card-body text-start">
+                            <img src="https://via.placeholder.com/400x200/ba2d97/ffffff?text=Automação" 
+                                 class="news-image shadow mb-3" alt="Automação">
+                            <h4><i class="fas fa-cogs me-2"></i> Automação Residencial</h4>
+                            <p style="color: var(--text-muted-color)" class="mb-3">
+                                <i class="fas fa-calendar me-2"></i> 08 de fevereiro, 2025
+                            </p>
+                            <p>A automação residencial usando IoT torna as casas mais inteligentes e eficientes. Controle de temperatura, iluminação e segurança através de dispositivos conectados.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="btn btn-primary-custom">
+                                    Leia Mais
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Botão flutuante para voltar ao topo -->
+    <div class="floating-action">
+        <button class="floating-btn" onclick="scrollToTop()" title="Voltar ao topo">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+    <!-- Rodapé início -->
+    <footer class="footer-custom py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-robot me-2"></i> Portal Robótica & IoT</h5>
+                    <p class="text-muted">Explorando o futuro da tecnologia através da robótica e Internet das Coisas.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h6>Siga-nos</h6>
+                    <a href="#" class="me-3"><i class="fab fa-instagram fs-4"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-github fs-4"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-linkedin fs-4"></i></a>
+                    <a href="#" class=""><i class="fab fa-youtube fs-4"></i></a>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Portal Robótica & IoT. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Rodapé fim -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/script.js"></script>
+</body>
+</html>
